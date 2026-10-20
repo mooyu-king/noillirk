@@ -1,0 +1,28 @@
+2:"$Sreact.fragment"
+3:I[4580,[],""]
+4:I[5106,[],""]
+9:"static/chunks/157-2e4f714c886f9c3b.js"
+a:"static/chunks/815-7ad5669ef385df5a.js"
+b:"static/chunks/app/multiplayer/page-4a449808c7426a7f.js"
+c:I[3157,["157","$9","815","$a","985","$b"],""]
+d:I[4815,["157","$9","815","$a","985","$b"],"RoomGame"]
+e:I[6081,[],"OutletBoundary"]
+f:"$Sreact.suspense"
+12:"ViewportBoundary"
+13:I[6081,[],"$12"]
+14:"MetadataBoundary"
+15:I[6081,[],"$14"]
+6:X
+6:C
+7:X
+8:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","main",null,{"id":"main","className":"wrap","children":[["$","div",null,{"className":"notice","children":[["$","span",null,{"className":"status-dot"}],["$","span",null,{"children":[["$","strong",null,{"children":"Test flight."}]," Original test questions, illustrative scores. Not PlayDaily answer data."]}],["$","$Lc",null,{"href":"/noillirk/scoring/#coverage","children":"Read the limits ↗"}]]}],["$","div",null,{"className":"page-intro","children":[["$","p",null,{"className":"eyebrow","children":"BETTER WITH COMPANY"}],["$","h1",null,{"children":"Bring your people."}],["$","div",null,{"className":"lede","children":["$","p",null,{"children":"A shared set of questions. A little friendly competition. A fair score for everyone."}]}]]}],["$","$Ld",null,{}]]}],null,["$","$Le",null,{"children":["$","$f",null,{"name":"Next.MetadataOutlet","children":"$@10"}]}]]}],"p":"$@11","v":null,"s":"$7"}}]]
+1:[["children",{"s":"multiplayer","h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","template":["$","$L4",null,{}]}]]}],"p":"$@5","v":"$6","s":"$7"},"c":"$Q8"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L13",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L15",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$f",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Private Multiplayer Test Rooms | Noillirk Games"}],["$","meta","1",{"name":"description","content":"Create a local Noillirk test room for 2–12 friends. Same questions, fixed scores and shared ranks for tied totals."}],["$","meta","2",{"name":"keywords","content":"Private Multiplayer Test Rooms"}],["$","meta","3",{"name":"robots","content":"noindex, follow"}],["$","link","4",{"rel":"canonical","href":"https://noillirk.co/multiplayer/"}],["$","meta","5",{"property":"og:title","content":"Private Multiplayer Test Rooms"}],["$","meta","6",{"property":"og:description","content":"Create a local Noillirk test room for 2–12 friends. Same questions, fixed scores and shared ranks for tied totals."}],["$","meta","7",{"property":"og:url","content":"https://noillirk.co/multiplayer/"}],["$","meta","8",{"property":"og:site_name","content":"Noillirk Games"}],["$","meta","9",{"property":"og:locale","content":"en_US"}],["$","meta","10",{"property":"og:image","content":"https://noillirk.co/game-art/forest-original.png"}],["$","meta","11",{"property":"og:image:alt","content":"Original forest artwork from our independent Noillirk preview"}],["$","meta","12",{"property":"og:type","content":"website"}],["$","meta","13",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","14",{"name":"twitter:title","content":"Private Multiplayer Test Rooms"}],["$","meta","15",{"name":"twitter:description","content":"Create a local Noillirk test room for 2–12 friends. Same questions, fixed scores and shared ranks for tied totals."}],["$","meta","16",{"name":"twitter:image","content":"https://noillirk.co/game-art/forest-original.png"}]]}]}],null]}],null]}],"p":"$@16","v":null,"s":"$7"}},"a":"$@17","u":"$@18","b":"Aqr2GvT4Yijh6yjbR6opy"}
+10:null
+18:true
+7:300
+7:C
+17:0
+5:"$undefined"
+16:"$undefined"
+11:"$undefined"

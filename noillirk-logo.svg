@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
+  <title>Noillirk — a little lift</title>
+  <desc>Three bright balloons lifting a small explorer, on a dark forest badge.</desc>
+  <rect x="2" y="2" width="76" height="76" rx="22" fill="#102B23" stroke="#4D7560" stroke-width="2"/>
+  <path d="M24 36L39 56M56 36L41 56M40 30V55" stroke="#F1F3D9" stroke-width="2" stroke-linecap="round"/>
+  <path d="M24 14C16 14 12 20 13 27C14 34 20 39 24 40C28 39 34 33 35 27C36 20 32 14 24 14Z" fill="#67E5CF" stroke="#102B23" stroke-width="2"/>
+  <path d="M56 14C48 14 44 20 45 27C46 34 52 39 56 40C60 39 66 33 67 27C68 20 64 14 56 14Z" fill="#B9A0F7" stroke="#102B23" stroke-width="2"/>
+  <path d="M40 7C32 7 27 13 28 21C29 29 35 35 40 37C45 35 51 29 52 21C53 13 48 7 40 7Z" fill="#FF70A1" stroke="#102B23" stroke-width="2"/>
+  <path d="M34 14C32 16 32 18 32 20M18 21L17 25M51 21L50 24" stroke="#FFF7E6" stroke-width="2.5" stroke-linecap="round" opacity=".8"/>
+  <circle cx="40" cy="53" r="5" fill="#F9D78D" stroke="#102B23" stroke-width="2"/>
+  <path d="M34 60L30 55M46 60L50 52" stroke="#F9D78D" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M36 65L33 71M43 65L47 70" stroke="#F1F3D9" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M36 58H44L46 65H34L36 58Z" fill="#F9D78D"/>
+</svg>
