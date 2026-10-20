@@ -1,0 +1,6 @@
+# .worker是需要提交的运行入口，不能忽略。
+.wrangler/
+node_modules/
+.env*
+.dev.vars*
+*.log

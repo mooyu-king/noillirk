@@ -1,0 +1,21 @@
+# 只排除静态上传；Git仓库和README仍保留在out中。
+/.git/**
+/.github/**
+/.worker/**
+/.wrangler/**
+/node_modules/**
+/.local/**
+/.env*
+/.dev.vars*
+/.assetsignore
+/.gitignore
+/wrangler.json
+/wrangler.jsonc
+/wrangler.toml
+/README*
+/readme*
+/package*.json
+/_worker.js
+/_routes.json
+/HANDOFF.md
+/AGENTS.md
