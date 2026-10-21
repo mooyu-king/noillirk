@@ -1,5 +1,5 @@
-:HL["/_next/static/css/047ce2347f536fdb.css","style"]
+:HL["/_next/static/css/5477cf8a04f04aaf.css","style"]
 :HL["/noillirk-logo.svg","image"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":{"n":"slug","t":"c","k":"contact","s":["_not-found","_global-error","challenge","embed","multiplayer","play","robots.txt","room","sitemap.xml"]},"h":65600,"c":"$Q2"}]]
-0:{"b":"qx7K99PDDJC-qjVb192S_","t":{"t":{"s":"","h":131088,"c":"$Q1"}}}
+0:{"b":"PvG8zcrnw85bUyLjNzLLM","t":{"t":{"s":"","h":131088,"c":"$Q1"}}}
