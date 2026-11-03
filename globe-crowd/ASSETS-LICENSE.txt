@@ -1,0 +1,25 @@
+Globe Crowd — 地图、素材与题库说明
+版本：globe-preview-20261102-v2；制作日期：2026-11-02。
+
+地图：Natural Earth 1:110m Admin 0 Countries，公开领域（Public domain）。
+原始来源：https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_admin_0_countries.geojson
+许可：https://www.naturalearthdata.com/about/terms-of-use/
+作者：Natural Earth contributors，包括 Tom Patterson、Nathaniel Vaughn Kelso 等。
+加工：保留轮廓并将坐标精度保留至小数点后三位，去除不需要的属性；展示177个地图要素，选择80国作为答题集合。原始下载文件的SHA256保存于atlas.json。地图经过简化，不是用于法律边界判断的权威测绘图。
+
+题库：本站独立规则生成并整理的384道预览题，区域取自该地图属性；邻国、内陆国、岛国采用明确范围的编辑集合。排名为编辑估计，与人口、搜索量、调查或实时玩家无关。automated-set-check表示代码一致性检查，不代表独立人工发布审核。正式审核未完成。
+
+scene.mjs：本站原创程序绘制的地图展示、平台及角色动画（角色图见下方新版说明）；没有复制竞品渲染代码、角色、音乐或字体。视觉为Canvas深度着色，不是WebGL模型。
+farflung-game-atlas-guide.svg/webp：本站原创操作示意，使用上述地图轮廓；不是游戏截图。
+farflung-game-pilots-guide.svg/webp：本站原创四飞行员设计示意；不是游戏截图。
+farflung-game-cover.svg/webp：本站早期原创飞行员/地球封面示意。
+字体：浏览器系统字体与Georgia，无新增远程字体。
+
+Globe Crowd is an independent preview on noillirk.co, not affiliated with Farflung LLC. Map data is public domain. Original game code and illustrations are not third-party Farflung assets. Editorial ranks are not survey percentages. No live multiplayer is provided in this build.
+
+2026-11-02 新版角色（替代运行时四人矢量造型）：
+pilot-*-v3.webp、pilots-crew-v3.webp、pilots-cover-v3.webp：本项目通过内置 imagegen 生成的16位原创飞行员，主题为飞行眼镜、羊羔绒夹克、地球徽章和地图包；非竞品素材。运行时采用透明图片与Canvas变换动画，不是可旋转的3D模型。前四人编号保持兼容旧存档。旧示意资源保留但不再用于当前人物介绍与封面。
+
+2026-11-03 flags/*.svg：lipis/flag-icons（https://github.com/lipis/flag-icons），MIT许可，完整许可见flags/LICENSE.txt。按80国代码下载并本地托管，无运行时CDN依赖。
+
+2026-11-03扩展题库：384题，基于Natural Earth和mledoze/countries冻结事实独立生成，不是Farflung官方题库。country-facts.json及expanded-bank.mjs为衍生数据库，按ODbL-1.0提供；来源https://github.com/mledoze/countries，完整许可BANK-LICENSE.txt。当前公开题库整体按ODbL-1.0提供，游戏程序与人物美术不因此变更许可。来源快照2026-11-03；首都、语言、货币及面积并非实时服务，人工发布审核仍待完成。排名始终是本站编辑估计，不是真人热度。
