@@ -1,3 +1,4 @@
+import {openResultShare} from '../result-share.mjs';
 import {createRun,answer,nextRound,remaining,tier,ROUNDS,SECONDS} from './engine.mjs';
 import {createOcean} from './scene.mjs';
 const $=id=>document.getElementById(id), scene=createOcean($('ocean'));
@@ -23,7 +24,8 @@ $('answer-form').onsubmit=e=>{e.preventDefault();settle()};$('finish-round').onc
 function tick(){if(!run||run.phase!=='question')return;const seconds=remaining(run);$('timer').textContent=seconds;$('timer-bar').style.width=`${seconds/SECONDS*100}%`;if(!seconds)settle(true)}
 setInterval(tick,200);document.addEventListener('visibilitychange',tick);
 $('next').onclick=()=>{run=nextRound(run);if(run.phase!=='complete'){question();return}show('complete');hud();scene.set({depth:run.score*10,phase:'complete',celebrate:true});$('total-score').textContent=`${run.score} / 700`;$('total-depth').textContent=`${run.score*10} metres explored`;$('result-note').textContent=`${run.results.filter(r=>r.score>0).length} listed answers · ${mode==='daily'?'Daily '+run.date:'Practice'} · local results only`;$('dive-chart').replaceChildren(...run.results.map((r,i)=>{const bar=document.createElement('span');bar.style.height=`${r.score}%`;bar.title=`Round ${i+1}: ${r.score} points`;const label=document.createElement('small');label.textContent=r.score;bar.append(label);return bar}));$('review').replaceChildren(...run.results.map(r=>{const li=document.createElement('li');li.textContent=`${r.question.prompt} — ${r.label||r.input||'No answer'}: ${r.score} points`;return li}));save('rare-dive-best',Math.max(Number(read('rare-dive-best'))||0,run.score));$('share-note').textContent='';$('again').focus({preventScroll:true});};
-$('share').onclick=async()=>{const text=`Rare Dive · ${run.date}\n${run.score}/700 points · ${run.score*10} m\nIndependent editorial-score game\nhttps://noillirk.co/krillion/`;try{await navigator.clipboard.writeText(text);$('share-note').textContent='Copied — no answers or spoilers included.'}catch{$('share-note').textContent=text}};
+$('share').setAttribute('aria-label','Share score image');$('share').title='Share score image';
+$('share').onclick=()=>openResultShare({game:'Krillion',points:run.results.map(r=>r.score),art:'/rare-dive/diver-v2.webp',detail:`${run.score*10} metres explored · ${run.date}`});
 show('menu');
 if(mode==='practice')document.querySelector('[data-mode="practice"]').click();
 const announceReady=()=>{if(parent!==window)parent.postMessage({type:'RARE_DIVE_READY'},location.origin)};
