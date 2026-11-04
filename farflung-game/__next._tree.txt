@@ -4,4 +4,4 @@
 :HL["/globe-crowd/flags/jp.svg","image"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"farflung-game","h":64,"c":"$Q2"}]]
-0:{"b":"cB_NnNyNPg3AwKTIMTNqE","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"CAhAVyYPdr9HZjTJvXxPE","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
