@@ -17,8 +17,9 @@ export function crowdVisual(score,mode){
  const count=mode==='cold'?10-band:band;
  return {count,crown:mode==='cold'&&count===1};
 }
+export async function withDeadline(work,ms=10000){let timer;try{return await Promise.race([work,new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('Image resource timed out')),ms)})])}finally{clearTimeout(timer)}}
 let active=false;
-export async function openResultShare({game,points,art,detail='',mode=game==='Krillion'?'cold':'hot'}) {
+export async function openResultShare({game,points,art,renderRound,detail='',mode=game==='Krillion'?'cold':'hot'}) {
  if(active)return;active=true;
  const trigger=document.activeElement,dialog=document.createElement('dialog');
  dialog.setAttribute('aria-label','Score image');
@@ -48,15 +49,15 @@ export async function openResultShare({game,points,art,detail='',mode=game==='Kr
   if(mode==='cold'){c.beginPath();c.moveTo(0,14);c.lineTo(10,0);c.lineTo(34,0);c.lineTo(44,14);c.lineTo(22,44);c.closePath();c.stroke();c.beginPath();c.moveTo(0,14);c.lineTo(44,14);c.moveTo(10,0);c.lineTo(22,44);c.lineTo(34,0);c.stroke();}
   else{c.beginPath();c.moveTo(24,0);c.bezierCurveTo(37,19,9,17,27,30);c.bezierCurveTo(34,25,36,19,36,14);c.bezierCurveTo(60,45,18,64,7,39);c.bezierCurveTo(0,24,16,19,14,11);c.bezierCurveTo(18,17,18,19,19,22);c.bezierCurveTo(25,15,19,8,24,0);c.fill();}c.restore();
   text(mode==='cold'?'RARE MODE':'POPULAR MODE',818,67,29,accent);text('INDEPENDENT EDITION',818,105,16);
-  const picture=new Image();picture.src=art;let timer;try{await Promise.race([picture.decode(),new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error()),10000)})])}finally{clearTimeout(timer)};
+  const picture=new Image();if(!renderRound){picture.src=art;await withDeadline(picture.decode());}
   // Farflung复用游戏本身的地球仪绘制器和地图；其他游戏复用实际场景素材。
-  const loadArt=async src=>{const image=new Image();image.src=src;await image.decode();return image};
+  const loadArt=async src=>{const image=new Image();image.src=src;await withDeadline(image.decode());return image};
   let globeStage,globeFeatures=[],globePortraits=[],selectedPilot=0,sceneArt;
-  if(game==='Farflung'){
-   const [{createCrowdStage},{pilots},atlas]=await Promise.all([import('./globe-crowd/crowd-stage.mjs'),import('./globe-crowd/pilots.mjs'),fetch('/globe-crowd/atlas.json').then(r=>{if(!r.ok)throw Error('Map unavailable');return r.json()})]);
+  if(game==='Farflung'&&!renderRound){
+   const [{createCrowdStage},{pilots},atlas]=await withDeadline(Promise.all([import('./globe-crowd/crowd-stage.mjs'),import('./globe-crowd/pilots.mjs'),fetch('/globe-crowd/atlas.json').then(r=>{if(!r.ok)throw Error('Map unavailable');return r.json()})]));
    globeStage=createCrowdStage;globeFeatures=atlas.features;selectedPilot=Math.max(0,pilots.findIndex(p=>art.endsWith(p.image)));
    globePortraits=await Promise.all(pilots.map(p=>loadArt('/globe-crowd/'+p.image)));
-  }else sceneArt=await loadArt(game==='Noillirk'?'/game-art/tabletop-stage.webp':'/rare-dive/ocean-reef-v2.webp');
+  }else if(game!=='Farflung') sceneArt=await loadArt(game==='Noillirk'?'/game-art/tabletop-stage.webp':'/rare-dive/ocean-reef-v2.webp');
   const cols=Math.min(points.length,7),rows=Math.ceil(points.length/cols),step=1112/cols,rowHeight=rows===1?320:170;
   points.forEach((p,i)=>{
    const col=i%cols,row=Math.floor(i/cols),x=44+col*step,y=180+row*180,w=step-10;card(x,y,w,rowHeight);
@@ -65,7 +66,7 @@ export async function openResultShare({game,points,art,detail='',mode=game==='Kr
    c.save();c.beginPath();c.roundRect(x+4,y+4,w-8,sceneHeight,10);c.clip();
    if(game==='Farflung'){
     const tile=document.createElement('canvas');tile.width=400;tile.height=Math.round(400*sceneHeight/(w-8));
-    globeStage(tile.getContext('2d'),globePortraits)({w:tile.width,h:tile.height,t:0,pilot:selectedPilot,score:p,mode,accepted:p>0,reduced:true,elapsed:6000,features:globeFeatures,longitude:15,phase:'reveal'});
+    if(renderRound)renderRound(tile,p);else globeStage(tile.getContext('2d'),globePortraits)({w:tile.width,h:tile.height,t:0,pilot:selectedPilot,score:p,mode,accepted:p>0,reduced:true,elapsed:6000,features:globeFeatures,longitude:15,phase:'reveal'});
     c.drawImage(tile,x+4,y+4,w-8,sceneHeight);
     if(crown){const cx=x+w/2,cy=y+sceneHeight*.42;c.fillStyle='#ffd269';c.beginPath();c.moveTo(cx-13,cy);c.lineTo(cx-18,cy-18);c.lineTo(cx-5,cy-10);c.lineTo(cx,cy-24);c.lineTo(cx+5,cy-10);c.lineTo(cx+18,cy-18);c.lineTo(cx+13,cy);c.closePath();c.fill();}
    }else{
@@ -87,7 +88,7 @@ export async function openResultShare({game,points,art,detail='',mode=game==='Kr
   });
   card(44,550,1112,46);text('ROUND SCORES',64,580,18,accent);text(detail.slice(0,65),300,580,18);
   card(44,605,1112,38);text('Visual crowd density · editorial / simulated scores',64,630,17);c.textAlign='right';text('No public ranking',1130,630,17);c.textAlign='center';text(url,600,687,27,accent);c.textAlign='left';
-  const blob=await new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(Error()),'image/png'));
+  const blob=await withDeadline(new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(Error()),'image/png')));
   if(!dialog.open)return;
   objectUrl=URL.createObjectURL(blob);status.remove();
   const preview=document.createElement('img');preview.src=objectUrl;preview.alt=`${game}: ${total} points; rounds ${points.join(', ')}`;preview.style.cssText='display:block;width:100%;height:100%;min-height:0;object-fit:contain;flex:1;border-radius:12px';stage.append(preview);
@@ -103,7 +104,7 @@ export async function openResultShare({game,points,art,detail='',mode=game==='Kr
    for(const name of Object.keys(targets)){const b=makeButton(name,icons[name],()=>window.open(targets[name],'_blank','noopener,noreferrer'));b.append(document.createTextNode(name));b.style.minHeight='50px';grid.append(b)}
    panel.append(grid);const address=document.createElement('a');address.href=url;address.target='_blank';address.rel='noopener noreferrer';address.textContent=new URL(url).hostname;address.style.cssText='display:block;text-align:center;color:#86dfbd;margin-top:14px;padding:8px';panel.append(address);layer.append(panel);dialog.append(layer);back.focus();
   });bar.insertBefore(shareButton,close);
- } catch (error) {console.error('Score image generation failed', error);if(dialog.open)status.textContent='Image unavailable. Close and try again.'}
+ } catch (error) {console.error('Score image generation failed', error);if(dialog.open){status.textContent='Image unavailable. Please retry.';const retry=makeButton('Retry image',line('M3 10a9 9 0 1 1 1 8M3 3v7h7'),()=>{dialog.close();void openResultShare({game,points,art,renderRound,detail,mode})});bar.insertBefore(retry,close);}}
 }
 
 

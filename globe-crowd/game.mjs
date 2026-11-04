@@ -29,6 +29,6 @@ $('leave').onclick=()=>{persist();menu()};$('search').oninput=renderChoices;$('s
 function settle(pass=false){if(run?.phase!=='question'||(!pass&&!run.picked))return;run=submit(run,questions,pass?'':run.picked);persist();render()}
 $('confirm').onclick=()=>settle();$('pass').onclick=()=>settle(true);$('next').onclick=()=>{if(run?.phase!=='reveal')return;run=advance(run);persist();render()};$('again').onclick=()=>{ $('share-result').textContent='';menu()};
 $('share').textContent='Share score image';$('share').setAttribute('aria-label','Share score image');$('share').title='Share score image';
-$('share').onclick=()=>openResultShare({game:'Farflung',mode:run.mode,points:run.results.map(r=>r.score),art:'/globe-crowd/'+pilots[run.pilot].image,detail:`${run.kind} · ${run.date}`});
+$('share').onclick=()=>openResultShare({game:'Farflung',renderRound:scene.renderShare,mode:run.mode,points:run.results.map(r=>r.score),art:'/globe-crowd/'+pilots[run.pilot].image,detail:`${run.kind} · ${run.date}`});
 menu();syncMap(true);window.addEventListener('pagehide',event=>{if(!event.persisted)scene.destroy()});
 function ready(){if(parent!==window)parent.postMessage({type:'GLOBE_READY',version:VERSION},location.origin)}window.addEventListener('message',e=>{if(e.origin===location.origin&&e.source===parent&&e.data?.type==='GLOBE_PING')ready()});ready();
