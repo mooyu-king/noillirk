@@ -1,65 +1,53 @@
-# Noillirk — Think common. Fly higher.
+# Noillirk: Think Common, Fly Higher
 
-[English](#english) · [繁體中文](#繁體中文)
+[Visit Noillirk](https://noillirk.co/) to explore an independent common-answer game and the guides that explain its scoring. The premise is easy to understand: read a question, think of a familiar answer, and see how that answer fits the current question bank. A forest setting, a balloon explorer, and a rising platform turn a short sequence of questions into a small visual journey. The website also explains the limits of its data so that a number on the screen is not mistaken for a scientific measurement.
 
 ![Noillirk balloon explorer logo](./noillirk-logo.svg)
 
-## English
+## Find Your Starting Point
 
-[Explore Noillirk.co](https://noillirk.co/) · [How scoring works](https://noillirk.co/noillirk/scoring/) · [Explore the answer bank](https://noillirk.co/stats/)
+The homepage introduces the project and provides routes into the available game and supporting information. If you are visiting for the first time, spend a moment with the scoring explanation before trying to optimize a result. The purpose is to recognize familiar possibilities, not to prove that an unusual answer is objectively incorrect. An answer can make sense in ordinary conversation and still be absent from a limited game bank.
 
-A forest, three balloons, and seven chances to think like the crowd. Noillirk.co is an independent common-answer game: choose a familiar answer, watch your explorer rise, and discover an animated platform after each round.
+[Read the scoring guide](https://noillirk.co/noillirk/scoring/) when you want to understand what the displayed values represent. [Explore the answer information](https://noillirk.co/stats/) when you want more context about coverage. These pages are useful companions to the game rather than shortcuts to a guaranteed score. The available entries, aliases, and estimated weights define the experience you are playing today.
 
-![Original pixel-art forest from the Noillirk game](./game-art/forest-original.png)
+## A Short Round With a Clear Rhythm
 
-### A little thought. A little lift.
+The documented game format uses seven questions. Classic and Daily modes use a timer, while Practice offers a less hurried way to think through a response. The difference matters if you are still getting comfortable with how the question bank recognizes answers. Start with a pace that lets you read carefully instead of treating every prompt as a race.
 
-- **Seven questions, your pace.** Choose timed Classic and Daily runs, or think without a clock in Practice.
-- **See where every point comes from.** Relative answer weights produce scores from 1 to 100, with no speed bonus.
-- **Watch your platform come alive.** Ten animated crowd-density levels keep you in the center.
-- **Finish early when you are ready.** Skip wait submits your answer without waiting for the remaining timer.
-- **Learn from your flight.** Review accepted answers, listed aliases and the limits of the answer bank.
+The documented scoring model does not award a separate speed bonus. A quick response and a considered response are therefore not automatically different in value merely because of how long they took. Where the game presents a Skip wait control, it lets you submit the current answer before the remaining countdown ends. Read the current interface and instructions before using it, especially if you are still revising your answer.
 
-![Original wooden platform artwork used beneath the animated game characters](./game-art/tabletop-stage.webp)
+![Original forest artwork used by Noillirk](./game-art/forest-original.png)
 
-*Original game artwork—not a screenshot of a finished round. The playable scene adds animated characters.*
+## Understand What a Score Means
 
-### Clear about the numbers
+Answer weights are original illustrative estimates. They are not the results of a human survey, a count of current players, or records obtained from PlayDaily. A displayed value describes the relationship between an answer and the project's current data model. It does not establish how a whole population would respond to the same question.
 
-Answer weights are original illustrative estimates, **not human survey results or PlayDaily records**. Platform figures show visual density, not a real headcount. The current small bank eventually repeats; missing answers are not automatically wrong.
+This distinction is important when a familiar answer receives a lower value than you expected. A game can only evaluate the information it contains. The question wording, accepted spelling, listed aliases, and relative weights all affect the outcome. Use the explanatory pages to understand those boundaries rather than assuming that a result measures intelligence, cultural knowledge, or the quality of your opinion.
 
-**Public launch is being prepared.** Online play depends on the game service becoming available. Public multiplayer, accounts and competitive leaderboards are not currently offered.
+The bank is limited and questions may eventually repeat. Repetition can make a later round feel more familiar, but it does not turn the recorded weights into independent evidence about real-world popularity. Missing answers are not automatically wrong answers. They may simply be outside the current coverage.
 
-[Understand your score](https://noillirk.co/noillirk/scoring/) · [Find the original Krillion](https://noillirk.co/krillion/) · [Compare the games](https://noillirk.co/noillirk-vs-krillion/)
+## Read the Visual Feedback
 
-Independent project; not affiliated with PlayDaily. For the original Noillirk, visit [PlayDaily](https://playdaily.org/noillirk).
+The forest and balloon explorer give the game a recognizable atmosphere. The platform artwork provides a stage for animated characters, while different crowd-density levels communicate a visual response. These figures are part of the presentation. They should not be read as a live headcount or as proof that a matching number of people selected your answer.
 
-## 繁體中文
+The images in this introduction are actual project assets. They show the logo, forest background, and wooden platform used by the website. The platform image is not a screenshot of a completed round: the playable scene adds its characters and interface separately. Keeping that distinction visible makes it easier to understand what the illustrations show without promising a particular result.
 
-[探索 Noillirk.co](https://noillirk.co/) · [了解評分](https://noillirk.co/noillirk/scoring/) · [查看答案資料](https://noillirk.co/stats/)
+![Original wooden platform artwork for the animated character scene](./game-art/tabletop-stage.webp)
 
-一片森林、三顆氣球，以及七次猜中常見答案的機會。Noillirk.co 是獨立的常見答案遊戲：選擇熟悉的答案，看著探險者升空，每題結束都有動態小人平台。
+## Learn From the Answer Bank
 
-![Noillirk 遊戲使用的原創像素森林](./game-art/forest-original.png)
+A useful review starts with the exact question you were given. Look at what the prompt asks, then compare your response with the entries and aliases that the project documents. Two expressions that feel equivalent to a person may not both be listed. Checking the available information is more productive than repeatedly guessing whether an unexpected result was caused by spelling, coverage, or weighting.
 
-### 每個答案，都看得見回饋
+The website's guides provide context for those differences. They are especially helpful if you want to distinguish the game rules from assumptions about common knowledge. A short round can be entertaining without offering a complete survey of every reasonable answer, and understanding that limitation makes the experience easier to judge fairly.
 
-- **七題，自選節奏。** Classic 與 Daily 有倒數，Practice 不限時。
-- **分數有跡可循。** 依答案相對權重計算 1～100 分，不加速度獎勵。
-- **動態人物平台。** 十個視覺密度等級，主角始終站在中央。
-- **答完不用等。** Skip wait 提交目前答案，提前結束剩餘倒數。
-- **逐題回顧。** 查看已收錄答案、別名及題庫限制。
+## Discover the Related Games
 
-![用於動態角色場景的原創木質平台底圖](./game-art/tabletop-stage.webp)
+Noillirk.co is an independent development project and is not affiliated with PlayDaily. The names and original games discussed in its guides belong to their respective creators. A comparison page is an explanation of similarities and differences, not a statement that two games share the same implementation or answer database.
 
-*這是原創遊戲素材，不是結算截圖；實際遊戲會加入動態人物。*
+[Compare Noillirk and Krillion](https://noillirk.co/noillirk-vs-krillion/) for additional context, or [read the Krillion guide](https://noillirk.co/krillion/) to find information about that original game. For the original Noillirk experience, follow [PlayDaily's Noillirk page](https://playdaily.org/noillirk). These links help separate this independent project from the releases that inspired readers to search for it.
 
-### 清楚交代數字的來源
+## Availability and Expectations
 
-答案權重是本站原創的示意估計，**不是真人調查，也不是 PlayDaily 資料**。平台人物代表視覺密度，不是真實回答人數。現有題庫仍小，用完後會重複；未收錄不等於回答錯誤。
+Online play depends on the availability of the game service. A description of a mode is not a guarantee that every service or experimental feature is publicly available at every moment. Follow the current notices on the website, particularly around test runs and room-based experiences. This introduction does not promise public multiplayer, account features, or competitive leaderboards.
 
-**公開版本正在準備中。** 線上遊玩仍需等待遊戲服務就緒，目前不提供公開多人、帳號或競技排行榜。
-
-[理解分數](https://noillirk.co/noillirk/scoring/) · [尋找原版 Krillion](https://noillirk.co/krillion/) · [比較兩種玩法](https://noillirk.co/noillirk-vs-krillion/)
-
-本專案獨立運作，與 PlayDaily 無關聯。原版 Noillirk 請前往 [PlayDaily](https://playdaily.org/noillirk)。
+Return to [Noillirk.co](https://noillirk.co/) for the current entry points and explanations. Whether you prefer a quick set of questions or a closer look at the scoring model, the most useful approach is the same: read the prompt, understand the available information, and treat the result as feedback from this particular game rather than a universal judgment.
