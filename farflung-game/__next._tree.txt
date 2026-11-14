@@ -1,7 +1,7 @@
-:HL["/_next/static/css/935d07e3c0a1b98e.css","style"]
+:HL["/_next/static/css/a45b7ef28fe61a19.css","style"]
 :HL["/_next/static/css/c8e5248142511c76.css","style"]
 :HL["/noillirk-logo.svg","image"]
 :HL["/globe-crowd/flags/jp.svg","image"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"farflung-game","h":64,"c":"$Q2"}]]
-0:{"b":"dk2FxKqkKoPyoJBwAfbBT","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"4bZ1KTfFk6jNJuFds9G0M","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
