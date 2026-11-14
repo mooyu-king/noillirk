@@ -1,8 +1,8 @@
 :HL["/_next/static/css/a45b7ef28fe61a19.css","style"]
-:HL["/_next/static/css/e8da19b68a3b08af.css","style"]
+:HL["/_next/static/css/d85b71fc140e2149.css","style"]
 :HL["/noillirk-logo.svg","image"]
 :HL["/game-art/tabletop-friend.webp","image"]
 :HL["/game-art/tabletop-stage.webp","image"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"eraly-game","h":64,"c":"$Q2"}]]
-0:{"b":"4bZ1KTfFk6jNJuFds9G0M","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"6bFPIjimKaJYKdxZAucRO","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
