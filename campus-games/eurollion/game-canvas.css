@@ -1,0 +1,77 @@
+/* 固定逻辑画布，缩放适配iframe；游戏本体不再嵌套完整网站版式。 */
+html,body{width:100%;height:100%;overflow:hidden;background:#e7eddf}
+body{display:grid;place-items:center}
+body>main{width:100%;height:100%;max-width:none;padding:0;position:relative}
+.heading,.rules-note,body>footer{display:none}
+.site-header{position:fixed;left:12px;bottom:6px;z-index:30;padding:0;border:0;min-height:0;pointer-events:none}
+.site-header .brand,.site-header .local-tag{display:none}
+.site-header button{pointer-events:auto;background:#fff9ece8;border-radius:20px;padding:4px 12px;min-height:30px;font-size:10px}
+.save-status{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+#app{width:1100px;height:618.75px;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(var(--game-scale,1));transform-origin:center}
+.game-shell{height:100%;border:0;border-radius:0;box-shadow:none;position:relative;background:#eef0e5}
+.play-layout{height:100%;grid-template-columns:1fr 1fr}
+.visual-column{padding:24px;background:none;border:0;justify-content:center}
+.panel,#setup-form{padding:20px 26px;background:#fffcf3ed}
+#setup-form h2{font-size:27px;margin:5px 0 13px}
+#setup-form fieldset{margin-bottom:12px}
+#setup-form .field-title{padding-bottom:6px;font-size:10px}
+#setup-form .choice{min-height:52px;padding:8px 10px}
+#setup-form .topic-grid .choice{min-height:49px;padding:6px;flex-direction:row;gap:7px}
+#setup-form .choice strong,#setup-form .topic-grid strong{font-size:11px}
+#setup-form .choice small{font-size:10px}
+#setup-form .avatar-choice{min-height:77px;padding:4px 2px}
+#setup-form .avatar-choice .person{width:43px;height:57px}
+#setup-form .start-button{min-height:44px}
+#setup-form .selection-note{margin-top:6px}
+#setup-form .timer-option{margin:0 0 8px;min-height:28px}
+.resume-banner{position:absolute;left:22px;top:22px;width:500px;z-index:25;border:1px solid #d8cba3;border-radius:12px;padding:8px 12px;background:#fff8e9ed}
+.campus-caption{font-size:10px}
+/* 游玩与结果共用整幅校园，人物区域没有第二个背景边框。 */
+.active-game .toolbar{height:60px;padding:8px 20px;background:#fff9e4dc;backdrop-filter:blur(8px);border:0}
+.active-game .play-layout{height:calc(100% - 60px);grid-template-columns:1fr 1fr;padding:18px;gap:14px}
+.active-game .visual-column{padding:0;position:relative;justify-content:end}
+.active-game .campus-caption{display:none}
+.active-game .scene{height:100%;aspect-ratio:auto;background:none;box-shadow:none;border:0;overflow:visible}
+.active-game .campus-art{display:none}
+.active-game .scene-label,.active-game .scene-clock{top:0;font-size:9px}
+.active-game .scene-host{width:28%;left:7%;bottom:7%}
+.active-game .scene-student{width:29%;left:55%;bottom:7%}
+.active-game .scene-bubble{bottom:55%;left:4%;max-width:64%;font-size:14px;line-height:1.5;padding:15px 18px}
+.active-game .panel{align-self:center;padding:24px;background:linear-gradient(135deg,#fffdf4f5,#f5f1dfe8);border:1px solid #fff8df;border-radius:20px;box-shadow:0 16px 40px #243c3c29;backdrop-filter:blur(12px)}
+.question-title{font-size:27px;margin:14px 0 10px;line-height:1.2}
+.question-hint{font-size:12px;margin:8px 0}
+.answer-label{margin:14px 0 8px}.feedback{margin:8px 0;min-height:38px}
+.active-game .result-score{font-size:64px;margin-top:5px}
+.active-game .grade{margin:6px 0 12px}
+.result-question{font-size:16px}.result-answer{margin:8px 0 5px}
+.answer-explanation{margin:6px 0;line-height:1.5}
+.results-actions{margin-top:12px;grid-template-columns:1fr 1fr}
+.answer-actions{display:grid;grid-template-columns:1fr 1fr}
+.answer-library{margin-top:8px;padding-top:0}
+.answer-library summary{padding:10px 0}
+/* 浅砂岩讲台与广场一致：椭圆透视、石材接缝、柔和落地阴影。 */
+.active-game .stage{left:22%;right:2%;bottom:9%;height:18%;border:0;border-radius:50% / 24%;background:linear-gradient(180deg,#f5dfb7 0 24%,#d4b589 25% 67%,#b89b72 68%);box-shadow:0 8px 0 #a78d6d,0 17px 15px #463d3945;transform:rotate(-2deg)}
+.active-game .stage:before{content:'';position:absolute;inset:2% 2% 68%;border:1px solid #fff2d6;border-radius:50%;background:repeating-linear-gradient(90deg,transparent 0 52px,#b6976a40 53px 54px)}
+.active-game .stage:after{content:'';inset:70% 8% -15%;border-radius:50%;background:linear-gradient(#ddc198,#b99a70);z-index:-1}
+.stage-crest{position:absolute;left:46%;bottom:12%;border:1px solid #a3875f;border-radius:50%;padding:3px 7px;color:#886b44;font:bold 16px Georgia}
+.active-game .crowd-person{width:13%;bottom:27%;filter:drop-shadow(0 4px 3px #382e3229)}
+.active-game .crowd-person.player{width:23%;bottom:24%}
+.active-game .result-host{width:23%;left:0;bottom:9%}
+.active-game .result-bubble{bottom:73%;left:2%;max-width:85%;font-size:14px}
+.active-game .crowd-label{bottom:1%;border-radius:12px;font-size:10px;padding:7px}
+.recap-game .panel{padding:17px 22px}.recap-game h2{font-size:24px;margin:5px 0}
+.recap-game .summary-stats{display:flex;align-items:center;gap:20px}.recap-game .summary-stats p{font:10px/1.5 system-ui;margin:5px 0}
+.recap-game .result-score{font-size:44px}.recap-game .grade{margin:4px 0}.recap-game .fine{margin:5px 0}
+.recap-list{margin:8px 0}.recap-list li{padding:3px 0;font-size:11px;line-height:1.3;align-items:center;min-height:40px}
+.recap-list small{font-size:10px}.recap-list .number{width:22px;height:22px;line-height:22px}
+.recap-detail{display:block;text-align:left;background:none;color:var(--ink);width:100%;min-height:40px;padding:2px;font:inherit}
+.social-platforms{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:16px 0}
+.social-platform{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:84px;padding:10px 3px;border:1px solid #cbd5c4;border-radius:12px;background:#fffdf6;color:#24473d;font:600 11px system-ui}
+.social-platform:hover{background:#e5eddf}.social-platform svg{width:25px;height:25px}.social-platform small{font-size:9px;font-weight:400}
+#share-dialog{max-width:620px}#share-text{resize:none}#platform-open{margin:0 8px 8px 0;text-decoration:none}
+.detail-list{list-style:none;padding:0}.detail-list li{display:flex;justify-content:space-between;gap:20px;padding:10px;border-bottom:1px solid #d7dccb}
+@media(max-width:480px){.social-platforms{gap:4px}.social-platform{font-size:9px}.social-platform small{font-size:8px}dialog{padding:22px 14px}.site-header{left:4px;bottom:0}.site-header button{font-size:9px;min-height:22px}}
+/* 固定画布的网格不受宿主窄视口的旧移动断点改为多行。 */
+#setup-form .topic-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+#setup-form .avatar-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+#setup-form .topic-grid .choice-icon{flex-basis:auto}

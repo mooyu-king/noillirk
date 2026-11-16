@@ -1,5 +1,5 @@
-:HL["/_next/static/css/a45b7ef28fe61a19.css","style"]
+:HL["/_next/static/css/7368afee5fa22315.css","style"]
 :HL["/noillirk-logo.svg","image"]
 2:[["children",{"s":"__PAGE__","h":160}]]
-1:[["children",{"s":{"n":"slug","t":"c","k":"privacy","s":["_not-found","_global-error","challenge","embed","eraly-game","farflung-game","multiplayer","play","robots.txt","room","sitemap.xml"]},"h":65600,"c":"$Q2"}]]
-0:{"b":"nA1tbs5dJxG4HWyH6lHNZ","t":{"t":{"s":"","h":131088,"c":"$Q1"}}}
+1:[["children",{"s":{"n":"slug","t":"c","k":"privacy","s":["_not-found","_global-error","challenge","embed","eraly-game","eurollion","farflung-game","kegillion","multiplayer","play","robots.txt","room","sitemap.xml"]},"h":65600,"c":"$Q2"}]]
+0:{"b":"2jctCLraj9tR7dlclv83o","t":{"t":{"s":"","h":131088,"c":"$Q1"}}}

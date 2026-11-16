@@ -1,0 +1,78 @@
+/* 欧洲庭院：保留共享规则，以石色、森林绿、陶土色与刊物排版区分。 */
+:root{--ink:#294b40;--muted:#6d7468;--paper:#fcf6ea;--cream:#eee1ce;--line:#d8cebb;--red:#ae6248;--gold:#d6ad58;--mint:#e3e9db}
+html,body{background:#eee4d3}
+/* 所有阶段共用整幅庭院；不能用 background 简写再清掉图片。 */
+.game-shell{background:#eee4d3 url('./art/eurollion-campus.webp') center/cover no-repeat}
+.visual-column{background:transparent}
+.game-shell .scene{background:transparent;box-shadow:none;border:0}
+.game-shell .campus-art{display:none}
+.campus-caption{background:#fffbf2db;border-radius:10px;padding:8px 10px}
+.active-game{background-color:#d9c8ae}
+.panel,#setup-form{background:#fffbf2f5}
+#setup-form h2,.question-title,.recap-game h2{font-family:Georgia,'Palatino Linotype',serif;font-weight:500;letter-spacing:-.6px}
+.question-title{font-size:29px;line-height:1.22;text-wrap:pretty}
+.question-hint,.answer-explanation{font-family:system-ui,sans-serif}
+#setup-form fieldset{margin-bottom:13px}
+#setup-form .choices{gap:10px}
+#setup-form{max-height:100%;overflow-y:auto;scrollbar-width:thin}
+#setup-form .choice strong,#setup-form .topic-grid strong{font-size:12px}
+#setup-form .choice small,#setup-form .field-title{font-size:11px}
+#setup-form .avatar-choice>span:last-child{font-size:11px}
+#setup-form .choice{border-radius:10px;background:#fffcf6}
+#setup-form .choice:has(input:checked){background:#e6ecdf;border-color:#45654c;box-shadow:inset 0 0 0 1px #45654c}
+#setup-form .avatar-choice{background:#f5eddf;border-radius:10px}
+#setup-form .avatar-choice:has(input:checked){background:#eed8ba;border-color:#a56b43;box-shadow:inset 0 0 0 1px #a56b43}
+.primary{background:#355844;border-radius:10px}.primary:hover{background:#244631}
+.scene-label{color:#604c36;background:#fffaeadd}.scene-clock{background:#37543cde}
+.scene-bubble{color:#3f5143;border-color:#f7ead4;background:#fff9eaf5}
+.active-game .panel{background:linear-gradient(135deg,#fffcf5fa,#f5ecddf2);border-color:#fff6e1;max-height:100%;overflow:auto}
+.active-game .stage{background:linear-gradient(180deg,#edddc3 0 24%,#c6ac87 25% 67%,#a68c6a 68%)}
+.active-game .result-score{color:#a45c3c}
+.answer-library{color:#785438}
+.campus-caption strong{letter-spacing:1px;color:#604f39}
+.scene-host .character-art{object-fit:contain}
+.setup-heading{display:flex;align-items:center;gap:10px;justify-content:space-between}
+.setup-heading h2{min-width:0}.setup-heading .icon-button{flex-shrink:0}
+.toolbar-actions{display:flex;gap:6px;flex-shrink:0}
+.storage-warning{color:#853f24;background:#fff0d8}
+#setup-form .selection-note{line-height:1.6}
+/* 窄屏保留16:9宿主，不把文字和44px触控区缩成桌面画布的三分之一。 */
+@media(max-width:700px),(max-height:500px) and (pointer:coarse){
+ #app{width:min(100%,calc(100vh * 16 / 9));height:auto;aspect-ratio:16/9;left:50%;top:50%;transform:translate(-50%,-50%)}
+ .game-shell{overflow:hidden}.play-layout{display:block;height:100%}
+ .visual-column{display:none}
+ .panel,#setup-form{padding:12px 14px;height:100%;overflow-y:auto;overscroll-behavior:contain}
+ #setup-form h2{font-size:22px;margin:5px 0 10px}
+ #setup-form .section-top{font-size:10px}.section-top>span{letter-spacing:.4px}
+ #setup-form .field-title{font-size:11px}#setup-form .choice strong,#setup-form .topic-grid strong{font-size:12px}
+ #setup-form .choice small{font-size:11px}#setup-form .choice{min-height:54px}
+ #setup-form .topic-grid .choice{min-height:54px;flex-direction:column}
+ #setup-form .avatar-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ #setup-form .avatar-choice{min-height:86px}#setup-form .avatar-choice>span:last-child{font-size:12px}
+ #setup-form .start-button{position:sticky;bottom:0;box-shadow:0 -5px 12px #fffbf2;min-height:46px;margin-top:10px}
+ #setup-form .selection-note{font-size:11px}
+ .game-shell:has(.resume-banner),.active-game{display:grid;grid-template-rows:auto minmax(0,1fr)}
+ .resume-banner{position:static;width:auto;margin:0;padding:8px;font-size:12px}
+ .resume-banner+.play-layout{height:auto;min-height:0}
+ .active-game .toolbar{height:auto;min-height:48px;padding:2px 6px;gap:5px}
+ .run-badges{min-width:0;gap:4px}.toolbar .badge{padding:4px 6px}.toolbar .icon-button{flex-shrink:0}
+ .toolbar .badge{font-size:10px}.toolbar button,.icon-button{min-height:44px;min-width:44px}
+ .active-game .play-layout{height:auto;min-height:0;display:grid;grid-template-columns:26% minmax(0,1fr);padding:0;gap:0}
+ .active-game .visual-column{display:flex;padding:0;overflow:hidden}
+ .active-game .scene{height:100%;min-height:0}
+ .active-game .scene-label,.active-game .scene-clock,.active-game .scene-bubble,.active-game .scene-student,.active-game .crowd-label{display:none}
+ .active-game .scene-host,.active-game .result-host{left:5%;width:88%;bottom:5%}
+ .active-game .stage{left:3%;right:3%;bottom:8%;height:12%}
+ .active-game .crowd-person{bottom:20%;width:14%}.active-game .crowd-person.player{width:35%;bottom:20%;left:50%!important}
+ .active-game .result-host{width:70%;left:15%;bottom:48%}
+ .active-game .panel{border-radius:0;height:100%;max-height:100%;align-self:stretch;padding:12px;overflow:auto}
+ .question-title{font-size:21px;line-height:1.25;margin:8px 0}.question-hint{font-size:12px}
+ .answer-label{margin:8px 0}.answer-row input{font-size:16px}.answer-actions{gap:7px}
+ .timer-option{min-height:44px}
+ .feedback{font-size:12px}.primary,.secondary{font-size:12px;min-height:44px;padding:10px}
+ .active-game .result-score{font-size:40px}.result-question{font-size:15px}.answer-explanation{font-size:12px}
+ .recap-game .panel{padding:12px}.recap-game h2{font-size:22px}.recap-list li{font-size:12px;min-height:44px}
+ .recap-detail{min-height:44px}.site-header{display:none}
+ dialog{width:calc(100% - 16px);max-height:calc(100% - 16px);padding:22px 12px}
+ .close,.social-platform{min-height:44px;min-width:44px}
+}
