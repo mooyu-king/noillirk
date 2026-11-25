@@ -1,5 +1,5 @@
 :HL["/_next/static/css/7368afee5fa22315.css","style"]
 :HL["/noillirk-logo.svg","image"]
 2:[["children",{"s":"__PAGE__","h":160}]]
-1:[["children",{"s":{"n":"slug","t":"c","k":"stats","s":["_not-found","_global-error","challenge","embed","eraly-game","eurollion","farflung-game","gd-krillion","kegillion","medical-krillion","multiplayer","play","robots.txt","room","sitemap.xml"]},"h":65600,"c":"$Q2"}]]
-0:{"b":"WP-zt6DdkTe42I_87Pm2J","t":{"t":{"s":"","h":131088,"c":"$Q1"}}}
+1:[["children",{"s":{"n":"slug","t":"c","k":"stats","s":["_not-found","_global-error","challenge","embed","eraly-game","eurollion","farflung-game","football-krillion","gd-krillion","kegillion","medical-krillion","multiplayer","play","robots.txt","room","sitemap.xml"]},"h":65600,"c":"$Q2"}]]
+0:{"b":"ZRx2IhUtKmJNbX9BMsg_p","t":{"t":{"s":"","h":131088,"c":"$Q1"}}}

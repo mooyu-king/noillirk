@@ -30,3 +30,17 @@
 .gd-guide figure{margin:0 0 1rem}.gd-guide figure img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:var(--gd-bg);border-radius:8px}.gd-guide figcaption{font-size:.84rem;margin-top:.45rem;color:var(--gd-muted)}
 .gd-guide .gd-faq details{border-top:1px solid var(--gd-line)}.gd-guide summary{min-height:44px;padding:10px 0;cursor:pointer;font-weight:700}
 @media(min-width:900px){.gd-guide .gd-photo{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:clamp(14px,2vw,32px);align-items:start}.gd-guide[data-theme=night] .gd-photo figure{grid-column:2;grid-row:1}.gd-guide[data-theme=night] .gd-photo>div{grid-column:1;grid-row:1}.gd-guide[data-theme=night] .gd-photo{grid-template-columns:minmax(0,3fr) minmax(0,2fr)}}
+krillion-player{display:block;min-width:0}
+.kr-player-frame{position:relative;isolation:isolate;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--gd-line,var(--mg-line,#658676));border-radius:13px;background:#112820}
+.kr-player-frame:fullscreen{width:100%;height:100%;border:0;border-radius:0}
+.kr-player-frame .kr-player-backdrop,.kr-player-frame iframe{position:absolute;inset:0;width:100%;height:100%;display:block;border:0}
+.kr-player-backdrop{object-fit:cover;pointer-events:none}
+.kr-player-frame iframe:not(.kr-frame-visible){visibility:hidden}
+.kr-player-cover{position:absolute;inset:0;display:grid;place-items:end center;padding:0 12px clamp(10px,3%,26px)}
+krillion-player [hidden]{display:none!important}
+krillion-player .kr-player-cover button,krillion-player .kr-player-tools button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:8px 14px;border:1px solid #78a995;border-radius:9px;background:#183c32;color:#f0f7ee;font:650 .875rem/1.2 system-ui,sans-serif;cursor:pointer}
+krillion-player .kr-player-cover button{background:#b4ebc5;color:#102e27;box-shadow:0 2px 16px #0a201bbb}
+krillion-player button:focus-visible{outline:3px solid #d3ffe0;outline-offset:2px}
+.kr-player-tools{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+krillion-player .kr-player-status{min-height:0;margin:8px 0 0;font-size:.85rem;line-height:1.5}
+.kr-player-status:empty{display:none}

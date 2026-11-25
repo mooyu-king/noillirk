@@ -1,53 +1,82 @@
+if (!customElements.get('krillion-player')) {
+  customElements.define('krillion-player', class extends HTMLElement {
+    connectedCallback() {
+      if (this.ready) return;
+      this.ready = true;
+      const frame = this.querySelector('.kr-player-frame');
+      const cover = this.querySelector('.kr-player-cover');
+      const play = this.querySelector('[data-gd-start]');
+      const tools = this.querySelector('.kr-player-tools');
+      const full = this.querySelector('[data-gd-full]');
+      const close = this.querySelector('[data-kr-close]');
+      const status = this.querySelector('[role=status]');
+      let active;
+      let waiting;
+
+      const stop = (message, focus = true) => {
+        window.clearTimeout(waiting);
+        if (document.fullscreenElement === frame) document.exitFullscreen().catch(() => {});
+        active?.remove();
+        active = null;
+        tools.hidden = true;
+        cover.hidden = false;
+        status.textContent = message;
+        if (focus) play.focus();
+      };
+
+      this.stop = () => stop('', false);
+      play.hidden = false;
+      full.hidden = !frame.requestFullscreen;
+      play.addEventListener('click', () => {
+        if (active) return;
+        const next = document.createElement('iframe');
+        next.title = this.dataset.gameTitle + ' browser game';
+        next.allow = 'fullscreen';
+        next.allowFullscreen = true;
+        next.referrerPolicy = 'strict-origin-when-cross-origin';
+        next.src = this.dataset.gdSrc;
+        next.addEventListener('error', () => {
+          if (active === next) stop('The game could not load. Check your connection and press Play game to retry.');
+        }, { once: true });
+        next.addEventListener('load', () => {
+          if (active !== next) return;
+          window.clearTimeout(waiting);
+          next.classList.add('kr-frame-visible');
+          status.textContent = 'If the player is unavailable, use Return to cover to try again.';
+        }, { once: true });
+        active = next;
+        tools.hidden = false;
+        cover.hidden = true;
+        status.textContent = 'Opening the game…';
+        waiting = window.setTimeout(() => {
+          if (active === next) stop('The game is taking too long to load. Press Play game to retry.');
+        }, 18000);
+        frame.append(next);
+        close.focus();
+      });
+      close.addEventListener('click', () => stop('Player closed. Press Play game to start again.'));
+      full.addEventListener('click', async () => {
+        try {
+          if (document.fullscreenElement === frame) await document.exitFullscreen();
+          else await frame.requestFullscreen();
+        } catch {
+          status.textContent = 'Fullscreen is unavailable. You can keep playing in the game panel.';
+        }
+      });
+    }
+    disconnectedCallback() { this.stop?.(); }
+  });
+}
+
 if (!customElements.get('gd-guide')) {
   customElements.define('gd-guide', class extends HTMLElement {
     connectedCallback() {
       if (this.ready) return;
       this.ready = true;
-      const cover = this.querySelector('.gd-cover');
-      const frameBox = this.querySelector('.gd-frame');
-      const start = this.querySelector('[data-gd-start]');
-      const full = this.querySelector('[data-gd-full]');
-      const status = this.querySelector('.gd-status');
-      const source = this.querySelector('[data-gd-src]').dataset.gdSrc;
       const form = this.querySelector('form');
       const output = form.querySelector('output');
       const initial = output.textContent;
-
-      start.hidden = false;
       form.hidden = false;
-      start.addEventListener('click', () => {
-        const frame = document.createElement('iframe');
-        frame.title = 'GD Krillion browser game';
-        frame.allow = 'fullscreen';
-        frame.allowFullscreen = true;
-        frame.src = source;
-        let timer = window.setTimeout(() => {
-          status.textContent = 'Still waiting? Check your connection before restarting the game.';
-        }, 11000);
-        this.cancelWaiting = () => window.clearTimeout(timer);
-        frame.addEventListener('load', () => {
-          window.clearTimeout(timer);
-          status.textContent = 'Choose your scoring mode in the game.';
-        }, { once: true });
-        frame.addEventListener('error', () => {
-          window.clearTimeout(timer);
-          status.textContent = 'The game did not load. Check your connection, then reload this page to try again.';
-        }, { once: true });
-        frameBox.append(frame);
-        cover.hidden = true;
-        full.hidden = !frameBox.requestFullscreen;
-        status.textContent = 'Opening the game…';
-        frame.focus();
-      }, { once: true });
-
-      full.addEventListener('click', async () => {
-        try {
-          if (document.fullscreenElement === frameBox) await document.exitFullscreen();
-          else await frameBox.requestFullscreen();
-        } catch {
-          status.textContent = 'Fullscreen is unavailable in this browser. You can keep playing in the game panel.';
-        }
-      });
       form.addEventListener('submit', (event) => {
         event.preventDefault();
         const data = new FormData(form);
@@ -62,6 +91,5 @@ if (!customElements.get('gd-guide')) {
       });
       form.addEventListener('reset', () => { output.textContent = initial; });
     }
-    disconnectedCallback() { this.cancelWaiting?.(); }
   });
 }
